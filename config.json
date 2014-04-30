@@ -8,7 +8,7 @@
 	"export_assets": "export",
 	"export_templates": "export",
 	"export_misc": "export",
-	"assemble_templates": false,
+	"assemble_templates": true,
 	"template_asset_prefix": "",
 	"host": "localhost",
 	"port":	"9000",
