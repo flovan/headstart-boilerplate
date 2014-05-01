@@ -3,8 +3,7 @@
 // Not as much a module, but separated as one to group all form styles
 
 fieldset,
-label
-{
+label {
 	@include rem(margin, 0, 0, strip($base-font-size));
 	padding: 0;
 
@@ -12,31 +11,36 @@ label
 	&:last-child { margin-bottom: 0; }
 }
 
-label
-{
+label {
 	input { @include rem(margin-top, 5); }
 }
 
-input,
-textarea
-{
-	// NOTE
-	// 
-	// For the sake of being able to easily use the HTML5 input types
-	// and not styling the "submit" type with this selector,
-	// please use the <button type="submit"></button> instead.
-	// Otherwise, expand above "input" to the desired types.
+// NOTE
+// 
+// This selector will affect <input type="submit"> elements.
+// Please use <button type="submit"></button> instead, unless
+// you aren't planning on using any HTML5 input types
 
-	font-family: $font-stack;
+input,
+textarea {
+	@include rem(padding, 10, 20, 8);
 	border: 1px solid $black;
 	background: $white;
 	@include rem(border-radius, 5);
+	font-family: $font-stack;
 	color: $black;
-	@include rem(padding, 10, 20, 8);
 	line-height: 1.5;
 	
-	&:focus
-	{
+	&:focus {
 		background-color: transparent;
 	}
+}
+
+// Style placeholder text
+// Includes class that the IE shim generates
+::placeholder,
+::-moz-placeholder,
+::-webkit-placeholder,
+.-placeholder {
+	color: #888;
 }

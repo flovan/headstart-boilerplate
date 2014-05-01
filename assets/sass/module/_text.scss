@@ -1,13 +1,11 @@
 // Selection color ------------------------------------------------------------
 
-::-moz-selection
-{
+::-moz-selection {
     background: $black-10;
     text-shadow: none;
 }
 
-::selection
-{
+::selection {
     background: $black;
     text-shadow: none;
 }
@@ -19,12 +17,13 @@ h2,
 h3,
 h4,
 h5,
-h6
-{
+h6 {
 	// Push down following content here
 	// @include rem(margin, 0, 0, 30);
 
-	&:last-of-type:last-child { margin-bottom: 0; }
+	&:last-of-type:last-child {
+		margin-bottom: 0;
+	}
 
 	// Optional: Push in headings for a better hand-held reading experience
 	// @include media-max($default-column-breakpoint) { padding-left: em(10); padding-right: em(10); }
@@ -32,12 +31,13 @@ h6
 
 // Paragraphs -----------------------------------------------------------------
 
-p
-{
+p {
 	// Push down following content here
 	// @include rem(margin, 0, 0, 30);
 	
-	&:last-of-type:last-child { margin-bottom: 0; }
+	&:last-of-type:last-child {
+		margin-bottom: 0;
+	}
 	
 	// Optional: Push in headings for a better hand-held reading experience
 	// @include media-max($default-column-breakpoint) { padding-left: em(10); padding-right: em(10); }
@@ -45,8 +45,7 @@ p
 
 // Lists ----------------------------------------------------------------------
 
-ul
-{
+ul {
 	// Justifies bullets to left without additional spacing
 	margin: 0;
 	padding: 0 0 0 1em;
@@ -54,5 +53,7 @@ ul
 	// Push down following content here
 	// @include rem(margin, 0, 0, 30);
 
-	&:last-of-type:last-child { margin-bottom: 0; }
+	&:last-of-type:last-child {
+		margin-bottom: 0;
+	}
 }
