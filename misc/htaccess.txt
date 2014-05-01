@@ -7,13 +7,13 @@ AddType application/x-font-woff .woff
 
 # Caching
 
-# ExpiresActive On
-# ExpiresByType image/gif "access plus 6 months"
-# ExpiresByType image/jpeg "access plus 6 months"
-# ExpiresByType image/png "access plus 6 months"
-# ExpiresByType text/css "access plus 6 months"
-# ExpiresByType text/javascript "access plus 6 months"
-# ExpiresByType application/javascript "access plus 6 months"
+ExpiresActive On
+ExpiresByType image/gif "access plus 6 months"
+ExpiresByType image/jpeg "access plus 6 months"
+ExpiresByType image/png "access plus 6 months"
+ExpiresByType text/css "access plus 6 months"
+ExpiresByType text/javascript "access plus 6 months"
+ExpiresByType application/javascript "access plus 6 months"
 
 # Gzip
 # read http://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/
