@@ -1,7 +1,6 @@
 {
 	"browser": "Google Chrome",
 	"editor": "Sublime Text",
-	"defaultPage":	"index.html",
 	"minifyHTML": false,
 	"autoPrefix": true,
 	"hint": true,
