@@ -37,11 +37,11 @@ var Utils = (function() {
 		 * It is actually best not to use this as it isn't {@link http://www.stucox.com/blog/you-cant-detect-a-touchscreen/ cross-browser}. 
 		 * @return {Boolean}
 		 */
-		isTouch: function() {
+		/*isTouch: function() {
 
 			if(_.isNull(isTouch)) isTouch = ('ontouchstart' in window) || (window.DocumentTouch && document instanceof DocumentTouch);
 			return isTouch;
-		},
+		},*/
 
 		/**
 		 * Detects whether a browser is "old", i.e. less than IE 9.
@@ -74,7 +74,6 @@ var Utils = (function() {
 			} else {
 				$('<link rel="stylesheet" type="text/css" href="css/ie' + (isProduction ? '.min' : '') + '.css" />').appendTo('head');
 			}
-			log('testlog');
 		},*/
 
 		/**
@@ -130,26 +129,3 @@ var Utils = (function() {
 		}*/
 	};
 }());
-
-/**
- * Serializes a form to an object, rather than a string.
- * @return {Object}
- */
-/*$.fn.serializeObject = function() {
-
-	'use strict';
-
-	var o = {};
-	var a = this.serializeArray();
-	$.each(a, function() {
-		if (o[this.name]) {
-			if (!o[this.name].push) {
-				o[this.name] = [o[this.name]];
-			}
-			o[this.name].push(this.value || '');
-		} else {
-			o[this.name] = this.value || '';
-		}
-	});
-	return o;
-};*/
