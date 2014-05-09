@@ -15,6 +15,7 @@ $default-column-breakpoint: 650px;
 $max-container-width: 1140px; 
 $min-page-padding: 4%; 
 
-// Mixin import -------------------------------------------------------------
+// Imports --------------------------------------------------------------------
 
 @import '../mixin/all';
+@import 'base/functions';
