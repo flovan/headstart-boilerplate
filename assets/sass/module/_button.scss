@@ -18,10 +18,9 @@
 
 // Modifiers ------------------------------------------------------------------
 //
-// Use these classes in your HTML
 
 /*
-.button--grey {
+%button--grey {
 	@extend %button;
 	@include rem(padding, 15);
 	background-color: shade($white, 30);
