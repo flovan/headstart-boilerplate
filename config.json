@@ -4,6 +4,8 @@
 	"minifyHTML": false,
 	"autoPrefix": true,
 	"devMinify": false,
+	"combineMediaQueries": false,
+	"uncssIgnore": [],
 	"hint": true,
 	"export_assets": "export",
 	"export_templates": "export",
