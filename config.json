@@ -5,6 +5,7 @@
 	"autoPrefix": true,
 	"devMinify": false,
 	"combineMediaQueries": false,
+	"useUncss": false,
 	"uncssIgnore": [],
 	"hint": true,
 	"export_assets": "export",
