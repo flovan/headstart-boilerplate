@@ -6,8 +6,7 @@
 //
 // $number: 	The value you want to unify
 
-@function strip($number)
-{
+@function strip ($number) {
 	@return $number / ($number * 0 + 1);
 }
 
@@ -18,8 +17,8 @@
 // $target: 	The target integer
 // $context: 	Base for conversion, defaults to $doc-em-factor
 
-@function em($target, $context: $base-font-size)
-{
+@function em ($target, $context: $base-font-size) {
+
 	$context: strip($context);
 	$target: strip($target);
 	
@@ -32,8 +31,8 @@
 //
 // $target: 	The target integer
 
-@function rem($target)
-{
+@function rem ($target) {
+
 	$context: strip($base-font-size);
 	$target: strip($target);
 	
@@ -42,19 +41,18 @@
 
 // Tint -----------------------------------------------------------------------
 //
-// Taken from Bourbon source
 // Add percentage of white to a color
+// Taken from Bourbon source
 
-@function tint($color, $percent)
-{
+@function tint ($color, $percent) {
 	@return mix(white, $color, $percent);
 }
 
 // Shade ----------------------------------------------------------------------
 //
-// Taken from Bourbon source
 // Add percentage of black to a color
-@function shade($color, $percent)
-{
+// Taken from Bourbon source
+
+@function shade ($color, $percent) {
 	@return mix(black, $color, $percent);
 }

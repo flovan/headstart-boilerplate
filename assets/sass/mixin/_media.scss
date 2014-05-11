@@ -5,11 +5,10 @@
 // $value:	The breakpoint, in px
 // $query:	What type of media this applies to, defaults to screen
 
-@mixin media-max($value, $query: 'screen')
-{
+@mixin media-max ($value, $query: 'screen') {
+	
 	$value: em($value);
-	@media #{$query} and (max-width: #{$value})
-	{
+	@media #{$query} and (max-width: #{$value}) {
 		@content;
 	}
 }
@@ -21,11 +20,10 @@
 // $value:	The breakpoint, in px
 // $query:	What type of media this applies to, defaults to screen
 
-@mixin media-min($value, $query: 'screen')
-{
+@mixin media-min ($value, $query: 'screen') {
+
 	$value: em($value);
-	@media #{$query} and (min-width: #{$value})
-	{
+	@media #{$query} and (min-width: #{$value}) {
 		@content;
 	}
 }
@@ -38,12 +36,11 @@
 // $valueMax:	The upper breakpoint, in px
 // $query:		What type of media this applies to, defaults to screen
 
-@mixin media-min-max($valueMin, $valueMax, $query: 'screen')
-{
+@mixin media-min-max ($valueMin, $valueMax, $query: 'screen') {
+
 	$valueMin: em($valueMin);
 	$valueMax: em($valueMax);
-	@media #{$query} and (min-width: #{$valueMin}) and (max-width: #{$valueMax})
-	{
+	@media #{$query} and (min-width: #{$valueMin}) and (max-width: #{$valueMax}) {
 		@content;
 	}
 }
@@ -52,16 +49,15 @@
 //
 // Generates a media query for high-resolution displays
 
-@mixin highres()
-{ 
+@mixin highres() { 
+
     @media
 	only screen and (-webkit-min-device-pixel-ratio: 2),
 	only screen and (   min--moz-device-pixel-ratio: 2),
 	only screen and (     -o-min-device-pixel-ratio: 2/1),
 	only screen and (        min-device-pixel-ratio: 2),
 	only screen and (                min-resolution: 192dpi),
-	only screen and (                min-resolution: 2dppx)
-    { 
+	only screen and (                min-resolution: 2dppx) { 
         @content
     }
 }
