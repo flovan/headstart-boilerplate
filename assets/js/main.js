@@ -2,14 +2,19 @@
 
 'use strict';
 
-// underscore is bundled in with ender, so just require it
+// Underscore is bundled in with ender, so just require it
+// Comment out this line when using the separated Underscore file,
+// eg. when using jQuery
 var _ = require('underscore');
 
 // Document -------------------------------------------------------------------
 
-$.domReady(function() {
+// When using jQuery, use
+// $(document).ready(function () {
 
-	log('_## Document ready_');
+$.domReady(function () {
+
+	log('## Document ready');
 
 	// VARS -------------------------------------------------------------------
 	//
