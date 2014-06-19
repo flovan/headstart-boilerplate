@@ -4,6 +4,9 @@
 // and mixins available for further usage
 
 @import 'base/config_global';
+@import 'mixins/all';
+@import 'base/functions';
+
 @import 'base/config_site';
 @import 'base/state';
 
