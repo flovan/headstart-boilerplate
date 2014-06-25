@@ -2,8 +2,6 @@
 	"browser": "Google Chrome",
 	"editor": "Sublime Text",
 	"minifyHTML": false,
-	"autoPrefix": true,
-	"devMinify": false,
 	"combineMediaQueries": false,
 	"useUncss": false,
 	"uncssIgnore": [],
@@ -12,8 +10,5 @@
 	"export_templates": "export",
 	"export_misc": "export",
 	"assemble_templates": true,
-	"template_asset_prefix": "",
-	"host": "localhost",
-	"port":	"9000",
-	"lr": "35729"
+	"template_asset_prefix": ""
 }
