@@ -28,7 +28,6 @@
 }
 %is-cf:after { clear: both; }
 %is-cf { *zoom: 1; }
-.is-cf { @extend %is-cf; }
 
 %is-vertical-aligned {
 	position: relative;
