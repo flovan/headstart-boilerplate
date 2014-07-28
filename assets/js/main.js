@@ -14,7 +14,7 @@ var _ = require('underscore');
 
 $.domReady(function () {
 
-	log('## Document ready');
+	console.log('## Document ready');
 
 	// VARS -------------------------------------------------------------------
 	//
