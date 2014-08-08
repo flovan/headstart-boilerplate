@@ -14,7 +14,7 @@ var _ = require('underscore');
 
 $.domReady(function () {
 
-	log('## Index script ready');
+	console.log('## Index script ready');
 
 	// VARS -------------------------------------------------------------------
 	//
