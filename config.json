@@ -2,7 +2,7 @@
 	"browser": "Google Chrome",
 	"editor": "Sublime Text",
 	"minifyHTML": false,
-	"combineMediaQueries": false,
+	"combineMediaQueries": true,
 	"useUncss": false,
 	"uncssIgnore": [],
 	"hint": true,
