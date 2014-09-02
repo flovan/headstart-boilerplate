@@ -19,10 +19,7 @@ body {
     background-color: $white;
     color: $black;
 	height: 100%;
-
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	@extend %is-antialiased;
 }
 
 // MS viewport fix

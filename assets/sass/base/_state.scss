@@ -34,3 +34,9 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+%is-antialiased {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
