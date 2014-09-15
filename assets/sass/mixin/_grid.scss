@@ -7,24 +7,70 @@
 //  @break:		Point where a column starts floating and stretching
 //	@context:	A context for @columns
 
+$Placeholder-Selectors: ();
+
 @mixin column ($columns, $end: false, $break: $default-column-breakpoint, $context: $total-columns) {
-	
-	display: inline-block;
-	vertical-align: top;
-	width: 100%;
+	@include column-static();
 
 	@include media-min ($break) {
 		$perc: (100 / $total-columns * $columns) * 1%;
 
 		@if $end == false {
-			float: left;
-			margin-right: $default-gutter-width;
+			@include column-left-static();
 		} @else {
-			float: right;
-			clear: right;
-			margin-right: 0;
+			@include column-right-static();
 		}
 
 		width: $perc - ($default-gutter-width - ($default-gutter-width/($total-columns / $columns)));
+	}
+}
+
+// Static column mixins -------------------------------------------------------
+//
+// These will be used to make the column mixin truly DRY.
+// Huge thanks go out to Team Sass and their Toolkit
+// https://github.com/team-sass/toolkit
+
+@mixin column-static ($extend: true) {
+	$column-selector: map-get($Placeholder-Selectors, 'column');
+	
+	@if $extend == true {
+		@include dynamic-extend('column') {
+			@include column-static(false);
+		}
+	}
+	@else {
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+	}
+}
+
+@mixin column-left-static ($extend: true) {
+	$column-selector: map-get($Placeholder-Selectors, 'column-left');
+	
+	@if $extend == true {
+		@include dynamic-extend('column-left') {
+			@include column-left-static(false);
+		}
+	}
+	@else {
+		float: left;
+		margin-right: $default-gutter-width;
+	}
+}
+
+@mixin column-right-static ($extend: true) {
+	$column-selector: map-get($Placeholder-Selectors, 'column-right');
+	
+	@if $extend == true {
+		@include dynamic-extend('column-right') {
+			@include column-right-static(false);
+		}
+	}
+	@else {
+		float: right;
+		clear: right;
+		margin-right: 0;
 	}
 }
