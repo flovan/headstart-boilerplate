@@ -10,7 +10,7 @@
 	color: $reporting-text;
 	border: 1px solid transparent;
 	@include rem(padding, 10, 20);
-	@include rem(margin, 0, 0, strip($base-font-size)*1.5);
+	@include rem(margin, 0, 0, 16);
 
 	&:last-of-type:last-child,
 	& > *:last-child { margin-bottom: 0; }
