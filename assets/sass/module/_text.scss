@@ -19,28 +19,22 @@ h4,
 h5,
 h6 {
 	// Push down following content here
-	// @include rem(margin, 0, 0, 30);
+	// @include rem(margin, 0, 0, strip($base-font-size)*1.5);
 
 	&:last-of-type:last-child {
 		margin-bottom: 0;
 	}
-
-	// Optional: Push in headings for a better hand-held reading experience
-	// @include media-max($default-column-breakpoint) { padding-left: em(10); padding-right: em(10); }
 }
 
 // Paragraphs -----------------------------------------------------------------
 
 p {
 	// Push down following content here
-	// @include rem(margin, 0, 0, 30);
+	// @include rem(margin, 0, 0, strip($base-font-size)*1.5);
 	
 	&:last-of-type:last-child {
 		margin-bottom: 0;
 	}
-	
-	// Optional: Push in headings for a better hand-held reading experience
-	// @include media-max($default-column-breakpoint) { padding-left: em(10); padding-right: em(10); }
 }
 
 // Lists ----------------------------------------------------------------------
@@ -51,7 +45,7 @@ ul {
 	padding: 0 0 0 1em;
 
 	// Push down following content here
-	// @include rem(margin, 0, 0, 30);
+	// @include rem(margin, 0, 0, strip($base-font-size)*1.5);
 
 	&:last-of-type:last-child {
 		margin-bottom: 0;
