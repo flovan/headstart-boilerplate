@@ -15,22 +15,46 @@
 	opacity: 0;
 }
 
-%is-bold { font-weight: bold; }
-%is-underlined { text-decoration: underline; }
-%is-italic { font-style: italic; }
-%is-uppercase { text-transform: uppercase; }
-%is-smallcaps { font-variant: small-caps; }
+%is-bold {
+	font-weight: bold;
+}
+
+%is-underlined {
+	text-decoration: underline;
+}
+
+%is-italic {
+	font-style: italic;
+}
+
+%is-uppercase {
+	text-transform: uppercase;
+}
+
+%is-smallcaps {
+	font-variant: small-caps;
+}
 
 %is-cf:before,
 %is-cf:after {
 	content: '';
 	display: table;
 }
-%is-cf:after { clear: both; }
-%is-cf { *zoom: 1; }
+%is-cf:after {
+	clear: both;
+}
+%is-cf {
+	*zoom: 1;
+}
 
 %is-vertical-aligned {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+%is-antialiased {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }

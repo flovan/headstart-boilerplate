@@ -8,11 +8,15 @@ label {
 	padding: 0;
 
 	&:last-of-type,
-	&:last-child { margin-bottom: 0; }
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 label {
-	input { @include rem(margin-top, 5); }
+	input {
+		@include rem(margin-top, 5);
+	}
 }
 
 // NOTE
@@ -30,6 +34,7 @@ textarea {
 	font-family: $font-stack;
 	color: $black;
 	line-height: 1.5;
+	@extend %is-antialiased;
 	
 	&:focus {
 		background-color: transparent;

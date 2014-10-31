@@ -8,6 +8,7 @@
 @mixin media-max ($value, $query: 'screen') {
 	
 	$value: em($value);
+	
 	@media #{$query} and (max-width: #{$value}) {
 		@content;
 	}
@@ -23,6 +24,7 @@
 @mixin media-min ($value, $query: 'screen') {
 
 	$value: em($value);
+
 	@media #{$query} and (min-width: #{$value}) {
 		@content;
 	}
@@ -40,6 +42,7 @@
 
 	$valueMin: em($valueMin);
 	$valueMax: em($valueMax);
+
 	@media #{$query} and (min-width: #{$valueMin}) and (max-width: #{$valueMax}) {
 		@content;
 	}

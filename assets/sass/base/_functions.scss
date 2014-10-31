@@ -7,6 +7,7 @@
 // $number: 	The value you want to unify
 
 @function strip ($number) {
+
 	@return $number / ($number * 0 + 1);
 }
 
@@ -31,9 +32,9 @@
 //
 // $target: 	The target integer
 
-@function rem ($target) {
+@function rem ($target, $context: $base-font-size) {
 
-	$context: strip($base-font-size);
+	$context: strip($context);
 	$target: strip($target);
 	
 	@return ($target/$context)*1rem;
@@ -45,6 +46,7 @@
 // Taken from Bourbon source
 
 @function tint ($color, $percent) {
+
 	@return mix(white, $color, $percent);
 }
 
@@ -54,5 +56,26 @@
 // Taken from Bourbon source
 
 @function shade ($color, $percent) {
+
 	@return mix(black, $color, $percent);
+}
+
+// Placeholder getter/setter --------------------------------------------------
+// 
+// Used by the dynamic extend mixin
+// Taken from Toolkit by Team Sass
+// https://github.com/team-sass/toolkit
+
+$Private-Toolkit-Placeholders: ();
+
+@function toolkit-placeholder-set ($id) {
+
+	$unique-id: unique-id();
+	$Private-Toolkit-Placeholders: map-merge($Private-Toolkit-Placeholders, ($id: $unique-id)) !global;
+	@return $unique-id;
+}
+
+@function toolkit-placeholder-get ($id) {
+	
+	@return map-get($Private-Toolkit-Placeholders, $id);
 }
