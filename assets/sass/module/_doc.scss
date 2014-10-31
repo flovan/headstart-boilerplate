@@ -1,6 +1,7 @@
 // Document -------------------------------------------------------------------
 
-// Border-box rules!
+// Setting inherative box-sizing
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html {
 	box-sizing: border-box;
     font-size: (strip($base-font-size) / 16) * 100 * 1%;
