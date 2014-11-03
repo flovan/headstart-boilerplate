@@ -3,8 +3,6 @@
 	"editor": "Sublime Text",
 	"minifyHTML": false,
 	"combineMediaQueries": true,
-	"useUncss": false,
-	"uncssIgnore": [],
 	"hint": true,
 	"w3c": false,
 	"export_assets": "export",
