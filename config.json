@@ -5,10 +5,10 @@
 	"combineMediaQueries": true,
 	"hint": true,
 	"w3c": false,
-	"export_assets": "export",
-	"export_templates": "export",
-	"export_misc": "export",
-	"assemble_templates": true,
-	"template_asset_prefix": "",
+	"exportAssets": "export",
+	"exportTemplates": "export",
+	"exportMisc": "export",
+	"assembleTemplates": true,
+	"templateAssetPrefix": "",
 	"revisionCaching": false
 }
