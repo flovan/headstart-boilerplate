@@ -37,4 +37,12 @@ $.domReady(function () {
 
 });
 
+// Instantiate FastClick
+// https://github.com/ftlabs/fastclick
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+
 }(window, $));

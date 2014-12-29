@@ -19,7 +19,7 @@ body {
     font-family: $font-stack;
     line-height: $base-line-height;
     background-color: $white;
-    color: $black;
+    color: $body-color;
 	height: 100%;
 	@extend %is-antialiased;
 }
@@ -43,4 +43,5 @@ a,
 input,
 button {
 	-ms-touch-action: none !important;
+	touch-action: none !important;
 }

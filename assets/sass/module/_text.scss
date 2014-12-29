@@ -15,6 +15,8 @@
 // Headings, paragraphs and lists are provided with a lessened line-height,
 // and push down content below them by 1em. Also provided, but commented out,
 // is a rem based solution based on the $base-font-size
+//
+// Note: .report is also included here
 
 h1,
 h2,
@@ -23,7 +25,9 @@ h4,
 h5,
 h6,
 p,
-ul {
+ul,
+ol,
+.report {
 	//@include rem(margin, 0, 0, strip($base-font-size)*1.5);
 	margin: 0 0 1em 0;
 
@@ -51,6 +55,23 @@ p {
 
 // Lists ----------------------------------------------------------------------
 
-ul {
-	padding: 0 0 0 1em;
+ul,
+ol {
+	padding: 0 0 0 1.4em;
+}
+
+// Links ----------------------------------------------------------------------
+
+a {
+	color: #00E;
+
+	&:hover {
+		color: #E00;
+	}
+	&:active {
+		text-decoration: none;
+	}
+	&:visited {
+		color: #551A8B;
+	}
 }
