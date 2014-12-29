@@ -49,7 +49,9 @@ label {
 		}
 	}
 
-	input {
+	input:last-child,
+	textarea:last-child,
+	select:last-child {
 		margin-top: .5em;
 	}
 }
@@ -61,8 +63,17 @@ label {
 // you aren't planning on using any HTML5 input types
 
 input,
-textarea {
+textarea,
+select {
 	width: 100%;
+
+	/* &:focus {
+		outline: none;
+	} */
+}
+
+input,
+textarea {
 	padding: rem(10) rem(20) rem(8);
 	border: 1px solid tint($body-color, 90);
 	background: $white;
@@ -84,10 +95,6 @@ input {
 	&[type=checkbox],
 	&[type=radio] {
 		display: inline-block;
-		width: auto;
-	}
-
-	&[type=file] {
 		width: auto;
 	}
 }

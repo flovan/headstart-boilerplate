@@ -9,11 +9,11 @@
 	border: none;
 	border-radius: .3em;
 	background: tint($body-color, 90);
-	outline: none;
 	line-height: 1;
 	font-family: $font-stack;
 	text-decoration: none;
 	@extend %is-antialiased;
+	@extend %is-centered;
 
 	&:hover {
 		background: tint($body-color, 95);
@@ -27,6 +27,10 @@
 		opacity: 0.5;
 		background: tint($body-color, 90);
 	}
+
+	/* &:focus {
+		outline: none;
+	} */
 }
 
 // Modifiers ------------------------------------------------------------------

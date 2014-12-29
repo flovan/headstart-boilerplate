@@ -5,7 +5,7 @@
         margin-bottom: 60px !important;
     }
 
-        .style-demo article {
+        .style-demo article:not(:last-child) {
             margin-bottom: 60px !important;
         }
 
@@ -30,7 +30,7 @@
                 }
         
         .style-demo fieldset label:first-child {
-            margin-bottom: 
+            /*margin-bottom: */
         }
 
         .style-demo fieldset button:not(:first-of-type) {
@@ -63,23 +63,23 @@
 </style>
 <section class="container style-demo">
     <p>This page contains an overview how basic elements render.<br>
-    Try enabling the module imports in the main stylesheet and see how the styling below changes.</p>
+    Try enabling the module imports in the main stylesheet to see how the styling below changes.</p>
     <article>
         <header>
             <h1>Heading overview</h1>
         </header>
-        <h1>I am sure I shall break mine</h1>
-        <h2>And who is to get food for us, John?</h2>
-        <h3>Charlotte&#39;s reply was spared by the entrance of Jane and Elizabeth.</h3>
-        <h4>Do you suppose them to be in London?</h4>
-        <h5>I dare say she will; she has got over the most trying age.</h5>
-        <h6>It&#39;s awfully difficult to be a twin.</h6>
+        <h1>The quick brown fox jumps over the lazy dog</h1>
+        <h2>The quick brown fox jumps over the lazy dog</h2>
+        <h3>The quick brown fox jumps over the lazy dog</h3>
+        <h4>The quick brown fox jumps over the lazy dog</h4>
+        <h5>The quick brown fox jumps over the lazy dog</h5>
+        <h6>The quick brown fox jumps over the lazy dog</h6>
     </article>
     <article>
         <header>
             <h1>Lists</h1>
         </header>
-        <p>Unordered list:</p>
+        <p><strong>Unordered list:</strong></p>
         <ul>
             <li>I am sure I shall break mine</li>
             <li>And who is to get food for us, John?</li>
@@ -93,7 +93,7 @@
             <li>It&#39;s awfully difficult to be a twin.</li>
             <li>No, by thunder!</li>
         </ul>
-        <p>Ordered list:</p>
+        <p><strong>Ordered list:</strong></p>
         <ol>
             <li>I am sure I shall break mine</li>
             <li>And who is to get food for us, John?</li>
@@ -175,7 +175,7 @@
             <h1>Form</h1>
         </header>
         <p class="report is-info"><strong>Note:</strong> The elements below were nested inside of a <code class="language-markup">&lt;label&gt;</code>, after a <code class="language-markup">&lt;span&gt;</code> containing the text label.<br><strong>Also note:</strong> Columns are for demo-purposes.</p>
-        <form action="">
+        <form>
             <fieldset class="col-2">
                 <legend><strong>Common form inputs</strong></legend>
                 <label for="text-input"><span>Text input</span>
@@ -218,11 +218,22 @@
                      value="test 3" checked>
                      <span>The last radiobutton</span></label>
             </fieldset>
-            <fieldset>
-                <legend><strong>A file select</strong></legend>
+            <fieldset class="col-2">
+                <legend><strong>Other form elements</strong></legend>
                 <label for="file-input">
                     <span>Attach a file</span>
                     <input type="file" id="file-input">
+                </label>
+                <label for="select-box">
+                    <span>Select an option</span>
+                    <select id="select-box">
+                        <option value="">Option 1</option>
+                        <option value="">Option 2</option>
+                        <option value="">Option 3</option>
+                        <option value="">Option 4</option>
+                        <option value="">Option 5</option>
+                        <option value="">Option 6</option>
+                    </select>
                 </label>
             </fieldset>
             <fieldset>
