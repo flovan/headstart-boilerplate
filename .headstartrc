@@ -10,5 +10,12 @@
 	"exportMisc": "export",
 	"assembleTemplates": true,
 	"templateAssetPrefix": "",
-	"revisionCaching": false
+	"revisionCaching": false,
+	"templatesFolder": "templates",
+	"favicons": {
+		"dest": "export/assets/images/meta",
+		"master": "assets/images/_tpl/favicon-master-600x600.png",
+		"silhouette": "assets/images/_tpl/favicon-silhouette-600x600.png",
+		"tileColor": "#179F9F"
+	}
 }
