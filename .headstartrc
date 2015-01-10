@@ -12,10 +12,17 @@
 	"templateAssetPrefix": "",
 	"revisionCaching": false,
 	"templatesFolder": "templates",
+	"duoFolder": "duo-components",
 	"favicons": {
 		"dest": "export/assets/images/meta",
 		"master": "assets/images/_tpl/favicon-master-600x600.png",
 		"silhouette": "assets/images/_tpl/favicon-silhouette-600x600.png",
 		"tileColor": "#179F9F"
+	},
+	"duo": {
+		"libs": ["jquery/jquery@1.11.2:dist/jquery.js", "lodash/lodash@2.4.1", "ftlabs/fastclick@v1.0.3"],
+		"libs/dev": ["kayahr/console-shim@master:console-shim.js"],
+		"ie/head": ["aFarkas/html5shiv@3.7.2:dist/html5shiv.js"],
+		"ie/body": ["UmbraEngineering/Placeholder@master:src/ie-behavior-span.js", "scottjehl/Respond@1.4.2:dest/respond.min.js"]
 	}
 }
