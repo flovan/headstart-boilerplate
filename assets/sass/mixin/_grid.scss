@@ -44,11 +44,11 @@
 	// @include col(6 pull 6) --> 6 out of $context, but pullen 6 out of of $context to the left
 	// @include col(5 centered) --> 5 out of $context, centered on the page
 	
-	$instructions: explode(implode(' ', $instructions), ' ');
+	$instructions: str-explode(str-implode(',', $instructions), ' ');
 	@for $i from 1 through length($instructions) {
 		@warn $i + ': ' + nth($instructions, $i);
 	}
-	//@warn implode('+', $instructions...);
+	@warn str-implode('+', $instructions...);
 }
 
 // TEST

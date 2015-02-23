@@ -62,14 +62,15 @@
 	@return mix(black, $color, $percent);
 }
 
-// explode()
+// str-explode()
 //
 // Explodes a string on a delimiter
+// Taken from HugoGiraudel/SassyStrings
 //
 // $string:     The string to explode
 // $delimiter:  The delimiter to look for
 
-@function explode($string, $delimiter: '') {
+@function str-explode($string, $delimiter: '') {
 	$result: ();
 	$length: str-length($string);
 
@@ -105,7 +106,7 @@
 // $args:       Any number of arguments that need to imploded
 //              The first argument will be used as delimiter
 
-@function implode ($args...) {
+@function str-implode ($args...) {
 	$stringified: '';
 	$delimiter: nth($args, 1) + '';
 	$sum: length($args);
