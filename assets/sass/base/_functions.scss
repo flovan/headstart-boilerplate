@@ -1,17 +1,16 @@
-// Functions ------------------------------------------------------------------
+// Utility functions
 
-// Strip-units ----------------------------------------------------------------
+// strip()
 //
 // Converts any typed variable to a regular integer
 //
 // $number: 	The value you want to unify
 
 @function strip ($number) {
-
 	@return $number / ($number * 0 + 1);
 }
 
-// Em -------------------------------------------------------------------------
+// em()
 //
 // Converts a target value to em's, based on a context
 //
@@ -19,43 +18,104 @@
 // $context: 	Base for conversion, defaults to $doc-em-factor
 
 @function em ($target, $context: $base-font-size) {
-
 	$context: strip($context);
 	$target: strip($target);
 	
 	@return ($target/$context)*1em;
 }
 
-// Rem ------------------------------------------------------------------------
+// rem()
 //
 // Converts a target value to rem's
 //
 // $target: 	The target integer
+// $context: 	Base for conversion, defaults to $doc-em-factor
 
 @function rem ($target, $context: $base-font-size) {
-
 	$context: strip($context);
 	$target: strip($target);
 	
 	@return ($target/$context)*1rem;
 }
 
-// Tint -----------------------------------------------------------------------
+// tint()
 //
 // Add percentage of white to a color
 // Taken from Bourbon source
+//
+// $color:      The base HEX color
+// $percent:    Amount of white mix into $color, in %
 
 @function tint ($color, $percent) {
-
 	@return mix(white, $color, $percent);
 }
 
-// Shade ----------------------------------------------------------------------
+// shade()
 //
 // Add percentage of black to a color
 // Taken from Bourbon source
+//
+// $color:      The base HEX color
+// $percent:    Amount of black mix into $color, in %
 
 @function shade ($color, $percent) {
-
 	@return mix(black, $color, $percent);
+}
+
+// explode()
+//
+// Explodes a string on a delimiter
+//
+// $string:     The string to explode
+// $delimiter:  The delimiter to look for
+
+@function explode($string, $delimiter: '') {
+	$result: ();
+	$length: str-length($string);
+
+	@if str-length($delimiter) == 0 {
+		@for $i from 1 through $length {
+			$result: append($result, str-slice($string, $i, $i));
+		}
+
+		@return $result;
+	}
+
+	$running: true;
+
+	@while $running {
+		$index: str-index($string, $delimiter);
+
+		@if $index {
+			$slice: str-slice($string, 1, $index);
+			$result: append($result, $slice);
+			$string: str-slice($string, $index + str-length($delimiter));
+		} @else {
+			$running: false;
+		}
+	}
+
+	@return append($result, $string);
+}
+
+// implode()
+//
+// Implode any number of variables into a String
+//
+// $args:       Any number of arguments that need to imploded
+//              The first argument will be used as delimiter
+
+@function implode ($args...) {
+	$stringified: '';
+	$delimiter: nth($args, 1) + '';
+	$sum: length($args);
+
+	@for $i from 2 through $sum {
+		$stringified: $stringified + nth($args, $i);
+		@if $i != $sum {
+			$stringified: $stringified + $delimiter;
+		}
+	}
+
+	@return $stringified;
 }

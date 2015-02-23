@@ -28,13 +28,28 @@
 	}
 }
 
-@mixin col($instructions, $end: false, $break: $default-column-breakpoint, $context: $total-columns) {
+@mixin col($instructions...) {
+
+	// SCENARIOS:
+	//
 	// @include col(4) --> 4 out of $context
+	// @include col(4 edge) --> 4 out of $context no margin to the right
 	// @include col(4 of 16) --> 4 out of 16
 	// @include col(6 at 1000px) --> 6 starting at 1000px
 	// @include col(6 from 1000px to 75em then 3) --> 6 from 1000px up until 75em, then 3
 	// @include col(6 from 1000px to 75em then 3 to 1400px then 4) --> 6 from 1000px up until 75em, then 3 up until 1400px, then 4
 	// @include col(4 offset 8) --> 4 out of $context, but offset 8 of $context
 	// @include col(6 no-break) --> 6 out of $context, doesn't break at $break
-	// @include col() -->
+	// @include col(6 push 6) --> 6 out of $context, but pushed 6 out of of $context to the right
+	// @include col(6 pull 6) --> 6 out of $context, but pullen 6 out of of $context to the left
+	// @include col(5 centered) --> 5 out of $context, centered on the page
+	
+	$instructions: explode(implode(' ', $instructions), ' ');
+	@for $i from 1 through length($instructions) {
+		@warn $i + ': ' + nth($instructions, $i);
+	}
+	//@warn implode('+', $instructions...);
 }
+
+// TEST
+@include col(6 from 1000px to 75em then 3 to 1400px then 4, no-break, centered);
