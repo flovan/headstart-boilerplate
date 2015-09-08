@@ -1,0 +1,34 @@
+// Document -------------------------------------------------------------------
+
+// Global styles
+html,
+body {
+    font-family: $font-stack;
+    line-height: $base-line-height;
+    background-color: $white;
+    color: $body-color;
+	height: 100%;
+	@extend %is-antialiased;
+}
+
+body {
+	font-size: 100%;
+}
+
+// MS viewport fix
+// http://msdn.microsoft.com/en-us/library/ie/hh869615(v=vs.85).aspx
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}
+
+// MS touch-delay fix
+// http://msdn.microsoft.com/en-us/library/ie/hh772044(v=vs.85).aspx
+a,
+input,
+button {
+	-ms-touch-action: none !important;
+	touch-action: none !important;
+}

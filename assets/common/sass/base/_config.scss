@@ -1,0 +1,60 @@
+// Grid -----------------------------------------------------------------------
+
+$gutter-width:        5%;
+$container-max-width: 1140px;
+$page-min-padding:    4%;
+
+// Spacing --------------------------------------------------------------------
+
+$spacings: (
+	xxs: rem(10),
+	xs:  rem(25),
+	s:   rem(35),
+	m:   rem(55),
+	l:   rem(75),
+	xl:  rem(85)
+);
+
+// Breakpoint -----------------------------------------------------------------
+
+$breakpoints: {
+	xxs: rem(450, 16),
+	xs:  rem(550, 16),
+	s:   rem(650, 16),
+	m:   rem(750, 16),
+	l:   rem(1050, 16),
+	xl:  rem(1250, 16),
+	xxl: rem(1350, 16)
+}
+
+// Accent colors --------------------------------------------------------------
+
+// eg. $my-cool-purple: #6E2D7E;
+
+// Greys ----------------------------------------------------------------------
+
+$white: #FFFFFF;
+$black: #000000;
+
+// Named references -----------------------------------------------------------
+
+$body-color: $black;
+
+// Reporting ------------------------------------------------------------------
+//
+// Using in the Reporting module (module/_reporting.scss)
+
+$reporting-text:    #333333;
+$reporting-success: #A2D69A;
+$reporting-error:   #F39B88;
+$reporting-warning: #F7E287;
+$reporting-info:    #90B1D2;
+
+// Font -----------------------------------------------------------------------
+//
+// Default stack base on http://www.jordanm.co.uk/tinytype
+
+$font-stack: "Helvetica Neue", Helvetica, Verdana, Roboto, sans-serif;
+//$font-stack-custom: "Some Font", $font-stack;
+$base-font-size: 16px;
+$base-line-height: 	1.5;

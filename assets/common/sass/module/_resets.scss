@@ -1,0 +1,66 @@
+// Based on https://10up.github.io/sanitize.css/
+
+// Normalization --------------------------------------------------------------
+
+button {
+	overflow: visible; // Internet Explorer 11-
+}
+
+main,
+details,
+summary { 
+	display: block; 
+	// In order:
+	// Android 4.3-, Internet Explorer 11-, Windows Phone 8.1+
+	// Edge 12+, Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
+	// Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
+}
+
+input {
+	&[type="number"] {
+		width: auto; // Firefox 36+
+	}
+
+	&[type="search"] {
+		-webkit-appearance: textfield; // Chrome 45+, Safari 9+
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			-webkit-appearance: none; // Chrome 45+, Safari 9+
+		}
+	}
+}
+
+pre,
+textarea {
+	overflow: auto;
+	// In order:
+	// Internet Explorer 11-
+	// Edge 12+, Internet Explorer 11-
+}
+
+// Resets ---------------------------------------------------------------------
+
+table {
+	border-collapse: 0;
+	border-spacing: 0;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: 0;
+}
+
+// Universal inheritance ------------------------------------------------------
+
+html {
+	box-sizing: border-box;
+    font-size: (strip($base-font-size) / 16) * 100 * 1%;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: inherit;
+}

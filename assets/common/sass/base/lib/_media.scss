@@ -1,0 +1,33 @@
+@mixin media-max ($value, $query: 'screen') {
+	$value: rem($value, 16);
+	@media #{$query} and (max-width: #{$value}) {
+		@content;
+	}
+}
+
+@mixin media-min ($value, $query: 'screen') {
+	$value: rem($value, 16);
+	@media #{$query} and (min-width: #{$value}) {
+		@content;
+	}
+}
+
+@mixin media-min-max ($valueMin, $valueMax, $query: 'screen') {
+	$valueMin: em($valueMin);
+	$valueMax: em($valueMax);
+	@media #{$query} and (min-width: #{$valueMin}) and (max-width: #{$valueMax}) {
+		@content;
+	}
+}
+
+@mixin media-retina() { 
+    @media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (     -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2),
+	only screen and (                min-resolution: 192dpi),
+	only screen and (                min-resolution: 2dppx) { 
+        @content
+    }
+}
