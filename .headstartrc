@@ -1,19 +1,18 @@
 {
 	"minifyHTML": false,
-	"combineMediaQueries": true,
 	"hint": true,
-	"w3c": false,
-	"exportAssets": "export",
-	"exportTemplates": "export",
-	"exportMisc": "export",
-	"assembleTemplates": true,
-	"templateAssetPrefix": "",
-	"revisionCaching": false,
+	"export": {
+		"assets": "export",
+		"templates": "export",
+		"root": "export"
+	},
+	"revision": false,
+	"templating": true,
+	"assetPrefix": "",
 	"compabilityMode": false,
 	"favicons": {
-		"dest": "export/assets/images/meta",
-		"master": "assets/images/_tpl/favicon-master-600x600.png",
-		"silhouette": "assets/images/_tpl/favicon-silhouette-600x600.png",
+		"master": "assets/icons/favicon-master-600x600.png",
+		"silhouette": "assets/icons/favicon-silhouette-600x600.png",
 		"tileColor": "#179F9F"
 	}
 }

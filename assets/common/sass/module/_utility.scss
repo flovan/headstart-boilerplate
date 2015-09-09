@@ -1,0 +1,204 @@
+// Wrapper --------------------------------------------------------------------
+
+.wr {
+    width: 92%;
+    max-width: 1140px;
+}
+
+
+
+// States ---------------------------------------------------------------------
+
+.hide {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+}
+
+.cf:before,
+.cf:after { content: ''; display: table; }
+.cf:after { clear: both; }
+
+
+
+// Positioning  ---------------------------------------------------------------
+
+.poa { position: absolute; }
+.por { position: relative; }
+
+.t0  { top: 0; }
+.r0  { right: 0; }
+.b0  { bottom: 0; }
+.l0  { left: 0; }
+
+.t-half  { top: .5rem; }
+.r-half  { right: .5rem; }
+.b-half  { bottom: .5rem; }
+.l-half  { left: .5rem; }
+
+
+
+// Display --------------------------------------------------------------------
+
+.db  { display: block; }
+.dib { display: inline-block; }
+.dt  { display: table; }
+.dtc { display: table-cell; }
+.vam { vertical-align: middle; }
+
+
+
+// Floating -------------------------------------------------------------------
+
+.fl { float: left; }
+.fr { float: right; }
+.fn { float: none; }
+
+
+
+// Columns --------------------------------------------------------------------
+
+// Generate .c1 through .c12, including 
+@for $i from 1 through 12 {
+    .c#{$i}           { width: (100/12*$i) * 1%; }
+    .c#{$i}:not(.end) { @extend .fl; }
+    .c#{$i}.end       { @extend .fr; }
+}
+
+
+
+// Padding --------------------------------------------------------------------
+
+.p0  { padding: 0; }
+.pt0 { padding-top: 0; }
+.pr0 { padding-right: 0; }
+.pb0 { padding-bottom: 0; }
+.pl0 { padding-left: 0; }
+
+// Generate padding classes based on the settings
+@each $sp, $sVal in $spacings {
+    .px#{$sp} { padding-left: $sVal; padding-right: $sVal; }
+    .py#{$sp} { padding-top: $sVal; padding-bottom: $sVal; }
+    .pt#{$sp} { padding-top: $sVal; }
+    .pr#{$sp} { padding-right: $sVal; }
+    .pb#{$sp} { padding-bottom: $sVal; }
+    .pl#{$sp} { padding-left: $sVal; }
+}
+
+
+
+// Margin ---------------------------------------------------------------------
+
+.mla    { margin-left: auto; }
+.mra    { margin-right: auto; }
+.mxauto { margin-left: auto; margin-right: auto; }
+
+// Generate margin classes based on the settings
+@each $sp, $sVal in $spacings {
+    .mx#{$sp} { margin-left: $sVal; margin-right: $sVal; }
+    .my#{$sp} { margin-top: $sVal; margin-bottom: $sVal; }
+    .mt#{$sp} { margin-top: $sVal; }
+    .mr#{$sp} { margin-right: $sVal; }
+    .mb#{$sp} { margin-bottom: $sVal; }
+    .ml#{$sp} { margin-left: $sVal; }
+}
+
+
+
+// Text properties ------------------------------------------------------------
+
+.ttu { text-transform: uppercase; }
+.tal { text-align: left; }
+.tar { text-align: right; }
+.tac { text-align: center; }
+
+
+
+// Font properties ------------------------------------------------------------
+
+.fwb { font-weight: bold; }
+.fwl { font-weight: lighter; }
+.fsi { font-style: italic; }
+
+
+
+// Media queries --------------------------------------------------------------
+
+// Generate media queries based on the settings
+@each $bp, $bpVal in $breakpoints {
+    @media screen and (min-width: $bpVal) {
+        .#{$bp}-hide { position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(0 0 0 0); opacity: 0; }
+        .#{$bp}-poa  { position: absolute; }
+        .#{$bp}-por  { position: relative; }
+
+        .#{$bp}-t0   { top: 0; }
+        .#{$bp}-r0   { right: 0; }
+        .#{$bp}-b0   { bottom: 0; }
+        .#{$bp}-l0   { left: 0; }
+
+        .#{$bp}-db   { display: block; }
+        .#{$bp}-dib  { display: inline-block; }
+        .#{$bp}-dt   { display: table; }
+        .#{$bp}-dtc  { display: table-cell; }
+
+        .#{$bp}-fl   { float: left; }
+        .#{$bp}-fr   { float: right; }
+        .#{$bp}-fn   { float: none; }
+
+        .#{$bp}-c1   { width: 8.333333%; }
+        .#{$bp}-c2   { width: 16.666667%; }
+        .#{$bp}-c3   { width: 25%; }
+        .#{$bp}-c4   { width: 33.333333%; }
+        .#{$bp}-c5   { width: 41.666667%; }
+        .#{$bp}-c6   { width: 50%; }
+        .#{$bp}-c7   { width: 58.333333%; }
+        .#{$bp}-c8   { width: 66.666667%; }
+        .#{$bp}-c9   { width: 75%; }
+        .#{$bp}-c10  { width: 83.333333%; }
+        .#{$bp}-c11  { width: 91.666667%; }
+        .#{$bp}-c12  { width: 100%; }
+        
+        // Double matching to prevent collision with .xs-c*
+        [class*="xx"][class*="s-c"]:not(.end) { float: left; }
+        [class*="xx"][class*="s-c"].end       { float: right; }
+
+        .#{$bp}-p0   { padding: 0; }
+        .#{$bp}-pt0  { padding-top: 0; }
+        .#{$bp}-pr0  { padding-right: 0; }
+        .#{$bp}-pb0  { padding-bottom: 0; }
+        .#{$bp}-pl0  { padding-left: 0; }
+
+        .#{$bp}-m0   { margin: 0; }
+        .#{$bp}-mt0  { margin-top: 0; }
+        .#{$bp}-mr0  { margin-right: 0; }
+        .#{$bp}-mb0  { margin-bottom: 0; }
+        .#{$bp}-ml0  { margin-left: 0; }
+
+        .#{$bp}-mla  { margin-left: auto; }
+        .#{$bp}-mra  { margin-right: auto; }
+        
+        // Generate margin and padding classes based on the settings
+        @each $sp, $sVal in $spacings {
+            .#{$bp}-px#{$sp} { padding-left: $sVal; padding-right: $sVal; }
+            .#{$bp}-py#{$sp} { padding-top: $sVal; padding-bottom: $sVal; }
+            .#{$bp}-pt#{$sp} { padding-top: $sVal; }
+            .#{$bp}-pr#{$sp} { padding-right: $sVal; }
+            .#{$bp}-pb#{$sp} { padding-bottom: $sVal; }
+            .#{$bp}-pl#{$sp} { padding-left: $sVal; }
+
+            .#{$bp}-mx#{$sp} { margin-left: $sVal; margin-right: $sVal; }
+            .#{$bp}-my#{$sp} { margin-top: $sVal; margin-bottom: $sVal; }
+            .#{$bp}-mt#{$sp} { margin-top: $sVal; }
+            .#{$bp}-mr#{$sp} { margin-right: $sVal; }
+            .#{$bp}-mb#{$sp} { margin-bottom: $sVal; }
+            .#{$bp}-ml#{$sp} { margin-left: $sVal; }
+        }
+
+        .#{$bp}-tal  { text-align: left; }
+        .#{$bp}-tar  { text-align: right; }
+        .#{$bp}-tac  { text-align: center; }
+    }
+}

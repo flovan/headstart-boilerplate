@@ -1,18 +1,14 @@
 // Import core ----------------------------------------------------------------
 
 @import 'core/functions';
-@import 'base/mixin';
-@import 'base/config';
-
-
-
-// Do resets ------------------------------------------------------------------
-
-@import 'module/reset';
+@import 'core/mixin';
+@import 'core/config';
 
 
 
 // Set up document ------------------------------------------------------------
+
+@import 'module/reset';
 
 html {
 	box-sizing: border-box;
@@ -36,13 +32,14 @@ body {
 // @import 'module/form';
 // @import 'module/reporting';
 // @import 'module/button';
+@import 'module/utility';
 
 
 
 // Browser upgrade prompt -----------------------------------------------------
 
 .browserupgrade {
-    padding: 1em 0;
+    padding: 1rem 0;
     background: $black;
     color: $white;
 }
