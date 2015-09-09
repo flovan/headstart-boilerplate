@@ -4,6 +4,8 @@ $gutter-width:        5%;
 $container-max-width: 1140px;
 $page-min-padding:    4%;
 
+
+
 // Spacing --------------------------------------------------------------------
 
 $spacings: (
@@ -14,6 +16,8 @@ $spacings: (
 	l:   rem(75),
 	xl:  rem(85)
 );
+
+
 
 // Breakpoint -----------------------------------------------------------------
 
@@ -27,34 +31,27 @@ $breakpoints: {
 	xxl: rem(1350, 16)
 }
 
-// Accent colors --------------------------------------------------------------
 
+
+// Colors ---------------------------------------------------------------------
+
+// Accent colors
 // eg. $my-cool-purple: #6E2D7E;
 
-// Greys ----------------------------------------------------------------------
-
+// Grey values
 $white: #FFFFFF;
 $black: #000000;
 
-// Named references -----------------------------------------------------------
+// Named references
+$doc-color: $black;
+$boc-bg-color: $white;
 
-$body-color: $black;
 
-// Reporting ------------------------------------------------------------------
-//
-// Using in the Reporting module (module/_reporting.scss)
-
-$reporting-text:    #333333;
-$reporting-success: #A2D69A;
-$reporting-error:   #F39B88;
-$reporting-warning: #F7E287;
-$reporting-info:    #90B1D2;
 
 // Font -----------------------------------------------------------------------
 //
 // Default stack base on http://www.jordanm.co.uk/tinytype
 
-$font-stack: "Helvetica Neue", Helvetica, Verdana, Roboto, sans-serif;
-//$font-stack-custom: "Some Font", $font-stack;
-$base-font-size: 16px;
-$base-line-height: 	1.5;
+$doc-font-stack:  "Helvetica Neue", Helvetica, Verdana, Roboto, sans-serif;
+$doc-font-size:   16px;
+$doc-line-height: 1.5;

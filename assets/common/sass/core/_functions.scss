@@ -17,7 +17,7 @@
 // $target:  The target integer
 // $context: Base for conversion, defaults to $doc-em-factor
 
-@function em ($target, $context: $base-font-size) {
+@function em ($target, $context: 16px) {
 	$context: strip($context);
 	$target: strip($target);
 	
@@ -31,7 +31,7 @@
 // $target:  The target integer
 // $context: Base for conversion, defaults to $doc-em-factor
 
-@function rem ($target, $context: $base-font-size) {
+@function rem ($target, $context: $doc-font-size) {
 	$context: strip($context);
 	$target: strip($target);
 	

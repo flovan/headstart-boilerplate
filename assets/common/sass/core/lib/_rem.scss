@@ -1,11 +1,11 @@
-//  Rem mixin -----------------------------------------------------------------
+// Rem mixin -----------------------------------------------------------------
 //
-//  Populates a given property with rem values, with px fallback
+// Populates a given property with rem values, with px fallback
 //
-//	@property:	The property to populate, eg "margin" or "padding"
-//	@values: 	Comma-separated list of values to be inserted
+// @property:	The property to populate, eg "margin" or "padding"
+// @values: 	Comma-separated list of values to be inserted
 //
-//	Example: @include rem(margin, 10, 20, 30, 40);
+// Example: @include rem(margin, 10, 20, 30, 40);
 
 @mixin rem ($property, $values...) {
 

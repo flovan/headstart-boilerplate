@@ -1,31 +1,58 @@
-@import 'base/functions';
+// Import core ----------------------------------------------------------------
+
+@import 'core/functions';
 @import 'base/mixin';
 @import 'base/config';
 
-// Normalize and document imports ---------------------------------------------
 
-@import 'module/resets';
-@import 'module/doc';
 
-// Module imports -------------------------------------------------------------
+// Do resets ------------------------------------------------------------------
 
-// @import 'module/container';
-// @import 'module/column'
-// @import 'module/font';
-// @import 'module/text';
-// @import 'module/table';
+@import 'module/reset';
+
+
+
+// Set up document ------------------------------------------------------------
+
+html {
+	box-sizing: border-box;
+	font-family: $doc-font-stack;
+    font-size: em(strip($doc-font-size));
+    line-height: $doc-line-height;
+}
+
+body {
+	font-size: 100%;
+    color: $doc-color;
+    background-color: $boc-bg-color;
+}
+
+
+
+// Import modules -------------------------------------------------------------
+
+@import 'module/font';
+@import 'module/text';
+// @import 'module/form';
 // @import 'module/reporting';
 // @import 'module/button';
-// @import 'module/form';
 
-// Vendor imports -------------------------------------------------------------
 
-//@import 'vendor/somestyles';
+
+// Browser upgrade prompt -----------------------------------------------------
+
+.browserupgrade {
+    padding: 1em 0;
+    background: $black;
+    color: $white;
+}
+
+
 
 // Styles ---------------------------------------------------------------------
 
+// YOUR STYLES HERE...
 
-// YOUR STYLES HERE <---------
 
 
 // Print ----------------------------------------------------------------------

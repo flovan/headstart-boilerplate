@@ -1,6 +1,6 @@
 // Based on https://10up.github.io/sanitize.css/
 
-// Normalization --------------------------------------------------------------
+// Normalization & Resets -----------------------------------------------------
 
 button {
 	overflow: visible; // Internet Explorer 11-
@@ -39,11 +39,19 @@ textarea {
 	// Edge 12+, Internet Explorer 11-
 }
 
-// Resets ---------------------------------------------------------------------
+html,
+input,
+textarea,
+button {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
 table {
 	border-collapse: 0;
 	border-spacing: 0;
+	width: 100%;
 }
 
 nav ul {
@@ -52,12 +60,29 @@ nav ul {
 	list-style-type: 0;
 }
 
-// Universal inheritance ------------------------------------------------------
-
-html {
-	box-sizing: border-box;
-    font-size: (strip($base-font-size) / 16) * 100 * 1%;
+img {
+    height: auto;
+	max-width: 100%;
+	height: auto !important;
+	// Removes vertical whitespace inside of container
+	vertical-align: middle;
 }
+
+
+
+// Touch fix ------------------------------------------------------------------
+// http://msdn.microsoft.com/en-us/library/ie/hh772044(v=vs.85).aspx
+
+a,
+input,
+button {
+	-ms-touch-action: none !important;
+	touch-action: none !important;
+}
+
+
+
+// Universal inheritance ------------------------------------------------------
 
 *,
 *:after,

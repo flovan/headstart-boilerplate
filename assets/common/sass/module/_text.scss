@@ -1,22 +1,11 @@
 // Selection color ------------------------------------------------------------
 
-::-moz-selection {
-    background: shade($white, 10);
-    text-shadow: none;
-}
+::-moz-selection { background: tint($doc-color, 80); text-shadow: none; }
+::selection      { background: tint($doc-color, 80); text-shadow: none; }
 
-::selection {
-    background: $black;
-    text-shadow: none;
-}
 
-// General normalizing --------------------------------------------------------
-//
-// Headings, paragraphs and lists are provided with a lessened line-height,
-// and push down content below them by 1em. Also provided, but commented out,
-// is a rem based solution based on the $base-font-size
-//
-// Note: .report is also included here
+
+// Push down ------------------------------------------------------------------
 
 h1,
 h2,
@@ -26,15 +15,16 @@ h5,
 h6,
 p,
 ul,
-ol,
-.report {
-	//@include rem(margin, 0, 0, strip($base-font-size)*1.5);
-	margin: 0 0 1em 0;
+ol {
+	margin: 0;
+	margin-bottom: 1em;
 
-	&:last-of-type:last-child {
+	&:last-child {
 		margin-bottom: 0;
 	}
 }
+
+
 
 // Headings -------------------------------------------------------------------
 
@@ -45,33 +35,39 @@ h4,
 h5,
 h6 {
 	line-height: 1.3;
+
+	* + & {
+		margin-top: 2em;
+	}
 }
 
-// Paragraphs -----------------------------------------------------------------
 
-p {
-	/**/
-}
 
 // Lists ----------------------------------------------------------------------
 
 ul,
 ol {
-	padding: 0 0 0 1.4em;
+	padding: 0;
+	padding-left: 1.4em;
 }
+
+
 
 // Links ----------------------------------------------------------------------
 
 a {
-	color: #00E;
+	color: $doc-color;
 
 	&:hover {
-		color: #E00;
+		color: tint($doc-color, 20);
 	}
+
 	&:active {
+		color: shade($doc-color, 10);
 		text-decoration: none;
 	}
+
 	&:visited {
-		color: #551A8B;
+		color: tint($doc-color, 10);
 	}
 }

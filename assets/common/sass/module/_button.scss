@@ -3,55 +3,72 @@
 // Sets some default styles for elements that are usually used for buttons,
 // such as <button> and <a> elements
 
-%button {
-	display: inline-block;
-	padding: .5em 1em;
+.button {
 	border: none;
-	border-radius: .3em;
-	background: tint($body-color, 90);
+	background: none;
 	line-height: 1;
-	font-family: $font-stack;
+	font-family: $doc-font-stack;
 	text-decoration: none;
-	@extend %is-antialiased;
-	@extend %is-centered;
+	text-align: center;
 
-	&:hover {
-		background: tint($body-color, 95);
+	&[disabled] {
+		opacity: 0.3;
+		pointer-events: none;
 	}
 
-	&:active {
-		background: tint($body-color, 80);
-	}
-	
-	&:disabled {
-		opacity: 0.5;
-		background: tint($body-color, 90);
-	}
+	svg {
+		position: relative;
+		top: rem(-2);
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		vertical-align: middle;
 
-	/* &:focus {
-		outline: none;
-	} */
+		&:first-child:not(:last-child) {
+			margin-right: .625em;
+		}
+
+		&:last-child:not(:first-child) {
+			margin-left: .625em;
+		}
+	}
 }
+
+
 
 // Modifiers ------------------------------------------------------------------
 //
 
-button,
-input[type=submit] {
-	@extend %button;
+/* eg.:
+.solid,
+.stroke {
+	font-size: em(14);
 }
-/*
-%button--grey {
-	@extend %button;
-	@include rem(padding, 15);
-	background-color: shade($white, 30);
-	color: shade($white, 70);
-	
-	&:hover {
-		background-color: shade($white, 20);
+
+.solid {
+	background-color: $black;
+	color: $white;
+
+	&:hover,
+	&:focus {
+		background-color: tint($black, 10);
 	}
+
 	&:active {
-		background-color: shade($white, 40);
+		background-color: shade($black, 10);
+	}
+}
+.stroke {
+	border: em(1, 14) solid $black;
+
+	&:hover,
+	&:focus {
+		border-color: tint($black, 10);
+	}
+
+	&:active {
+		background-color: tint($black, 90);
+		border-color: shade($black, 10);
 	}
 }
 */

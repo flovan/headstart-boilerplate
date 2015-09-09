@@ -2,7 +2,12 @@
 //
 // Easily setup Success, Error, Warning, and Info messages and lists
 
-$tintAmount: 80;
+$reporting-text:    #333333;
+$reporting-success: #A2D69A;
+$reporting-error:   #F39B88;
+$reporting-warning: #F7E287;
+$reporting-info:    #90B1D2;
+$tintAmount:        80;
 
 .report {
 	padding: 1em 1.5em;
@@ -12,22 +17,22 @@ $tintAmount: 80;
 
 	// Note: colors below are configured in _config_site.scss
 
-	&.is-success {
+	&.success {
 		border-top-color: $reporting-success;
 		background: tint($reporting-success, $tintAmount);
 	}
 
-	&.is-info {
+	&.info {
 		border-top-color: $reporting-info;
 		background: tint($reporting-info, $tintAmount);
 	}
 
-	&.is-warning {
+	&.warning {
 		border-top-color: $reporting-warning;
 		background: tint($reporting-warning, $tintAmount);
 	}
 
-	&.is-error {
+	&.error {
 		border-top-color: $reporting-error;
 		background: tint($reporting-error, $tintAmount);
 	}
