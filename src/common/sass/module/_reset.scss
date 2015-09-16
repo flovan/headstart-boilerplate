@@ -2,6 +2,10 @@
 
 // Normalization & Resets -----------------------------------------------------
 
+body {
+	margin: 0;
+}
+
 button {
 	overflow: visible; // Internet Explorer 11-
 }
@@ -57,14 +61,12 @@ table {
 nav ul {
 	margin: 0;
 	padding: 0;
-	list-style-type: 0;
+	list-style-type: none;
 }
 
 img {
-    height: auto;
 	max-width: 100%;
-	height: auto !important;
-	// Removes vertical whitespace inside of container
+	height: auto;
 	vertical-align: middle;
 }
 
