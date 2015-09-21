@@ -1,18 +1,24 @@
 {
-	"minifyHTML": false,
-	"hint": true,
+	"development": {
+		"hint": true,
+		"templating": true,
+		"assetPrefix": "",
+		prefixBrowsers: ["> 1%", "last 2 versions", "Firefox 28", "Opera 12.1", "ie 9"]
+	},
+	"production": {
+		"minifyHTML": false,
+		"minifyCSS": true,
+		"minifyJS": true,
+		"revision": true
+	},
+	"favicons": {
+		"master": "icon-master/favicon-master-600x600.png",
+		"silhouette": "icon-master/favicon-silhouette-600x600.png",
+		"tileColor": "#179F9F"
+	},
 	"export": {
 		"assets": "export",
 		"templates": "export",
 		"root": "export"
-	},
-	"revision": false,
-	"templating": true,
-	"assetPrefix": "",
-	"compabilityMode": false,
-	"favicons": {
-		"master": "assets/icons/favicon-master-600x600.png",
-		"silhouette": "assets/icons/favicon-silhouette-600x600.png",
-		"tileColor": "#179F9F"
 	}
 }
