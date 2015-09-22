@@ -21,7 +21,7 @@ $spacings: (
 
 // Breakpoint -----------------------------------------------------------------
 
-$breakpoints: {
+$breakpoints: (
 	xxs: rem(450, 16),
 	xs:  rem(550, 16),
 	s:   rem(650, 16),
@@ -29,7 +29,7 @@ $breakpoints: {
 	l:   rem(1050, 16),
 	xl:  rem(1250, 16),
 	xxl: rem(1350, 16)
-}
+);
 
 
 

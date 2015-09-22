@@ -3,7 +3,7 @@
 		"hint": true,
 		"templating": true,
 		"assetPrefix": "",
-		prefixBrowsers: ["> 1%", "last 2 versions", "Firefox 28", "Opera 12.1", "ie 9"]
+		"prefixBrowsers": ["> 1%", "last 2 versions", "Firefox 28", "Opera 12.1", "ie 9"]
 	},
 	"production": {
 		"minifyHTML": false,
@@ -16,7 +16,7 @@
 		"silhouette": "icon-master/favicon-silhouette-600x600.png",
 		"tileColor": "#179F9F"
 	},
-	"export": {
+	"dist": {
 		"assets": "export/assets",
 		"templates": "export",
 		"root": "export"
