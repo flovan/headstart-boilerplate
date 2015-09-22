@@ -17,7 +17,7 @@
 		"tileColor": "#179F9F"
 	},
 	"export": {
-		"assets": "export",
+		"assets": "export/assets",
 		"templates": "export",
 		"root": "export"
 	}
