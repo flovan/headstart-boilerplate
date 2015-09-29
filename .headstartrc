@@ -18,6 +18,8 @@
 	},
 	"dist": {
 		"assets": "export/assets",
+		"styles": "css",
+		"script": "js",
 		"templates": "export",
 		"root": "export"
 	}
