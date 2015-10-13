@@ -13,14 +13,14 @@
 html {
 	box-sizing: border-box;
 	font-family: $doc-font-stack;
-    font-size: em(strip($doc-font-size));
-    line-height: $doc-line-height;
+	font-size: em(strip($doc-font-size));
+	line-height: $doc-line-height;
 }
 
 body {
 	font-size: 100%;
-    color: $doc-color;
-    background-color: $boc-bg-color;
+	color: $doc-color;
+	background-color: $boc-bg-color;
 }
 
 
@@ -39,9 +39,9 @@ body {
 // Browser upgrade prompt -----------------------------------------------------
 
 .browserupgrade {
-    padding: 1rem 0;
-    background: $black;
-    color: $white;
+	padding: 1rem 0;
+	background: $black;
+	color: $white;
 }
 
 
