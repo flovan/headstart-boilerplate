@@ -9,6 +9,7 @@ $page-min-padding:    4%;
 // Spacing --------------------------------------------------------------------
 
 $spacings: (
+	0: 0,
 	h: .5rem,
 	1: 1rem,
 	2: 2rem,
@@ -22,29 +23,53 @@ $spacings: (
 // Breakpoint -----------------------------------------------------------------
 
 $breakpoints: (
-	xxs: rem(450, 16),
-	xs:  rem(550, 16),
-	s:   rem(650, 16),
-	m:   rem(750, 16),
-	l:   rem(1050, 16),
-	xl:  rem(1250, 16),
-	xxl: rem(1350, 16)
+	xxs: 530,
+	xs:  590,
+	s:   650,
+	m:   850,
+	l:   1050,
+	xl:  1250,
+	xxl: 1450
 );
+
+@function bp($key) {
+	@if map-has-key($breakpoints, $key) {
+		@return map-get($breakpoints, $key);
+	}
+
+	@warn "Unknown `#{$key}` in $breakpoints.";
+	@return null;
+}
 
 
 
 // Colors ---------------------------------------------------------------------
 
-// Accent colors
-// eg. $my-cool-purple: #6E2D7E;
+// Make a map to generate classes from
+$colors: (
+	"white":           #FFFFFF,
+	"black":           #000000
+);
 
-// Grey values
-$white: #FFFFFF;
-$black: #000000;
+@function color($key) {
+	@if map-has-key($colors, $key) {
+		@return map-get($colors, $key);
+	}
 
-// Named references
-$doc-color: $black;
-$boc-bg-color: $white;
+	@warn "Unknown `#{$key}` in $colors.";
+	@return null;
+}
+
+$doc-color: color('black');
+$boc-bg-color: color('white');
+
+// Reporting colors
+
+$reporting-text:    #333333;
+$reporting-success: #A2D69A;
+$reporting-error:   #F39B88;
+$reporting-warning: #F7E287;
+$reporting-info:    #90B1D2;
 
 
 

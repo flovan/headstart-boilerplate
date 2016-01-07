@@ -1,16 +1,106 @@
 // Wrapper --------------------------------------------------------------------
 
 .wr {
-    width: 92%;
-    max-width: 1140px;
+    width: (100 - 2*strip($page-min-padding)) * 1%;
+    max-width: $container-max-width;
 }
+
+
+
+// Positioning  ---------------------------------------------------------------
+
+.pof { position: fixed; }
+.poa { position: absolute; }
+.por { position: relative; }
+.pos { position: static; }
+
+.t0  { top: 0; }
+.r0  { right: 0; }
+.b0  { bottom: 0; }
+.l0  { left: 0; }
+
+@each $sp, $sVal in $spacings {
+    .t#{$sp} { top: $sVal; }
+    .r#{$sp} { right: $sVal; }
+    .b#{$sp} { bottom: $sVal; }
+    .l#{$sp} { left: $sVal; }
+}
+
+.z0 { z-index: 0; }
+.z1 { z-index: 1; }
+.z2 { z-index: 2; }
+.z3 { z-index: 3; }
+.z4 { z-index: 4; }
+.z5 { z-index: 5; }
+
+
+
+// Display --------------------------------------------------------------------
+
+.dn  { display: none; }
+.db  { display: block; }
+.di  { display: inline; }
+.dib { display: inline-block; }
+.dt  { display: table; }
+.dtr { display: table-row; }
+.dtc { display: table-cell; }
+.vam { vertical-align: middle; }
+.vat { vertical-align: top; }
+.vab { vertical-align: bottom; }
+
+
+
+// Flex -----------------------------------------------------------------------
+
+.flex { display: flex }
+
+.flex-column   { flex-direction: column; }
+.flex-wrap     { flex-wrap: wrap; }
+.flex-nowrap   { flex-wrap: nowrap; }
+.flex-reverse  { flex-wrap: wrap-reverse; }
+
+.flex-ai-center   { align-items: center; }
+.flex-ai-baseline { align-items: baseline; }
+.flex-ai-stretch  { align-items: stretch; }
+.flex-ai-start    { align-items: flex-start; }
+.flex-ai-end      { align-items: flex-end; }
+
+.flex-ac-between  { align-content: space-between; }
+.flex-ac-around   { align-content: space-around; }
+.flex-ac-center   { align-content: center; }
+.flex-ac-stretch  { align-content: stretch; }
+.flex-ac-start    { align-content: flex-start; }
+.flex-ac-end      { align-content: flex-end; }
+
+.flex-as-center   { align-self: center; }
+.flex-as-baseline { align-self: baseline; }
+.flex-as-stretch  { align-self: stretch; }
+.flex-as-start    { align-self: flex-start; }
+.flex-as-end      { align-self: flex-end; }
+
+.flex-jc-between  { justify-content: space-between; }
+.flex-jc-around   { justify-content: space-around; }
+.flex-jc-center   { justify-content: center; }
+.flex-jc-start    { justify-content: flex-start; }
+.flex-jc-end      { justify-content: flex-end; }
+
+.flex-auto {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+.flex-grow { flex: 1 0 auto; }
+.flex-none { flex: none; }
+
+.flex-first { order: -1; }
+.flex-last  { order: 99999; }
 
 
 
 // States ---------------------------------------------------------------------
 
 .hide {
-    position: absolute;
+    @extend .poa;
     height: 1px;
     width: 1px;
     overflow: hidden;
@@ -19,35 +109,16 @@
 }
 
 .cf:before,
-.cf:after { content: ''; display: table; }
+.cf:after { content: ''; @extend .dt; }
 .cf:after { clear: both; }
 
 
 
-// Positioning  ---------------------------------------------------------------
+// Transforms -----------------------------------------------------------------
 
-.poa { position: absolute; }
-.por { position: relative; }
-
-.t0  { top: 0; }
-.r0  { right: 0; }
-.b0  { bottom: 0; }
-.l0  { left: 0; }
-
-.t-half  { top: .5rem; }
-.r-half  { right: .5rem; }
-.b-half  { bottom: .5rem; }
-.l-half  { left: .5rem; }
-
-
-
-// Display --------------------------------------------------------------------
-
-.db  { display: block; }
-.dib { display: inline-block; }
-.dt  { display: table; }
-.dtc { display: table-cell; }
-.vam { vertical-align: middle; }
+.centerx  { left: 50%; transform: translateX(-50%); }
+.centery  { top: 50%; transform: translateY(-50%); }
+.centerxy { left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
 
 
@@ -56,16 +127,31 @@
 .fl { float: left; }
 .fr { float: right; }
 .fn { float: none; }
+.cn { clear: none; }
+.cl { clear: left; }
+.cr { clear: right; }
+.cb { clear: both; }
+
+
+
+// Sizing ---------------------------------------------------------------------
+
+.w0   { width: 0; }
+.h0   { height: 0; }
+.w100 { width: 100%; }
+.h100 { height: 100%; }
+.wgs  { width: 38.2%; }
+.wgl  { width: 61.8%; }
+.wa   { width: auto; }
+.ha   { height: auto; }
 
 
 
 // Columns --------------------------------------------------------------------
 
-// Generate .c1 through .c12, including 
+// Generate .c1 through .c12, including
 @for $i from 1 through 12 {
     .c#{$i}           { width: (100/12*$i) * 1%; }
-    .c#{$i}:not(.end) { @extend .fl; }
-    .c#{$i}.end       { @extend .fr; }
 }
 
 
@@ -94,7 +180,12 @@
 
 .mla    { margin-left: auto; }
 .mra    { margin-right: auto; }
-.mxauto { margin-left: auto; margin-right: auto; }
+
+.m0  { padding: 0; }
+.mt0 { padding-top: 0; }
+.mr0 { padding-right: 0; }
+.mb0 { padding-bottom: 0; }
+.ml0 { padding-left: 0; }
 
 // Generate margin classes based on the settings
 @each $sp, $sVal in $spacings {
@@ -114,14 +205,28 @@
 .tal { text-align: left; }
 .tar { text-align: right; }
 .tac { text-align: center; }
+.tdu { text-decoration: underline; }
+.tdn { text-decoration: none; }
+
+.lh1 { line-height: 1; }
 
 
 
 // Font properties ------------------------------------------------------------
 
 .fwb { font-weight: bold; }
+.fwn { font-weight: normal; }
 .fwl { font-weight: lighter; }
 .fsi { font-style: italic; }
+
+
+
+// Colors ---------------------------------------------------------------------
+
+@each $c, $cVal in $colors {
+    .bgc-#{""+$c} { background-color: $cVal; }
+    .c-#{""+$c} { color: $cVal; }
+}
 
 
 
@@ -129,24 +234,63 @@
 
 // Generate media queries based on the settings
 @each $bp, $bpVal in $breakpoints {
-    @media screen and (min-width: $bpVal) {
+    @media screen and (min-width: rem($bpVal,16)) {
         .#{$bp}-hide { position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(0 0 0 0); opacity: 0; }
         .#{$bp}-poa  { position: absolute; }
-        .#{$bp}-por  { position: relative; }
+		.#{$bp}-por  { position: relative; }
+        .#{$bp}-pos  { position: static; }
 
         .#{$bp}-t0   { top: 0; }
         .#{$bp}-r0   { right: 0; }
         .#{$bp}-b0   { bottom: 0; }
         .#{$bp}-l0   { left: 0; }
+		.#{$bp}-ti   { top: inherit; }
+        .#{$bp}-ri   { right: inherit; }
+        .#{$bp}-bi   { bottom: inherit; }
+        .#{$bp}-li   { left: inherit; }
 
+        @each $sp, $sVal in $spacings {
+            .#{$bp}-t#{$sp} { top: $sVal; }
+            .#{$bp}-r#{$sp} { right: $sVal; }
+            .#{$bp}-b#{$sp} { bottom: $sVal; }
+            .#{$bp}-l#{$sp} { left: $sVal; }
+        }
+
+        .#{$bp}-dn   { display: none; }
         .#{$bp}-db   { display: block; }
+        .#{$bp}-di   { display: inline; }
         .#{$bp}-dib  { display: inline-block; }
         .#{$bp}-dt   { display: table; }
+        .#{$bp}-dtr  { display: table-row; }
         .#{$bp}-dtc  { display: table-cell; }
+
+		.#{$bp}-flex      { display: flex; }
+		.#{$bp}-flex-grow { flex: 1 0 auto; }
+		.#{$bp}-flex-none { flex: none; }
+
+        .#{$bp}-centerx  { left: 50%; transform: translateX(-50%); }
+        .#{$bp}-centery  { top: 50%; transform: translateY(-50%); }
+        .#{$bp}-centerxy { left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
         .#{$bp}-fl   { float: left; }
         .#{$bp}-fr   { float: right; }
         .#{$bp}-fn   { float: none; }
+        .#{$bp}-cn   { clear: none; }
+        .#{$bp}-cl   { clear: left; }
+        .#{$bp}-cr   { clear: right; }
+        .#{$bp}-cb   { clear: both; }
+
+        .#{$bp}-w0   { width: 0; }
+        .#{$bp}-h0   { height: 0; }
+        .#{$bp}-w100 { width: 100%; }
+        .#{$bp}-h100 { height: 100%; }
+		.#{$bp}-wgs  { width: 38.2%; }
+		.#{$bp}-wgl  { width: 61.8%; }
+        .#{$bp}-wa   { width: auto; }
+        .#{$bp}-ha   { height: auto; }
+
+        .#{$bp}-dlr  { direction: ltr; }
+        .#{$bp}-drl  { direction: rtl; }
 
         .#{$bp}-c1   { width: 8.333333%; }
         .#{$bp}-c2   { width: 16.666667%; }
@@ -160,10 +304,6 @@
         .#{$bp}-c10  { width: 83.333333%; }
         .#{$bp}-c11  { width: 91.666667%; }
         .#{$bp}-c12  { width: 100%; }
-        
-        // Double matching to prevent collision with .xs-c*
-        [class*="xx"][class*="s-c"]:not(.end) { float: left; }
-        [class*="xx"][class*="s-c"].end       { float: right; }
 
         .#{$bp}-p0   { padding: 0; }
         .#{$bp}-pt0  { padding-top: 0; }
@@ -179,7 +319,7 @@
 
         .#{$bp}-mla  { margin-left: auto; }
         .#{$bp}-mra  { margin-right: auto; }
-        
+
         // Generate margin and padding classes based on the settings
         @each $sp, $sVal in $spacings {
             .#{$bp}-px#{$sp} { padding-left: $sVal; padding-right: $sVal; }
