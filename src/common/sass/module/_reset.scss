@@ -8,6 +8,7 @@ body {
 
 button {
 	overflow: visible; // Internet Explorer 11-
+	cursor: pointer;
 }
 
 main,
@@ -33,6 +34,11 @@ input {
 			-webkit-appearance: none; // Chrome 45+, Safari 9+
 		}
 	}
+
+	&:not([type="checkbox"]),
+	&:not([type="radio"]) {
+		font-size: 1rem;
+	}
 }
 
 pre,
@@ -53,7 +59,7 @@ button {
 }
 
 table {
-	border-collapse: 0;
+	border-collapse: collapse;
 	border-spacing: 0;
 	width: 100%;
 }

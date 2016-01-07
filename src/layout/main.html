@@ -1,23 +1,23 @@
 <!doctype html>
 <html lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <!-- SEO -->
-        <title>__PAGE_TITLE__</title>
-        <meta name="description" content="__PAGE_DESCRIPTION__">
+	<!-- SEO -->
+	<title>__PAGE_TITLE__</title>
+	<meta name="description" content="__PAGE_DESCRIPTION__">
 
-        <!-- Viewport and mobile -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Viewport and mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        {{inject location="head" include="common, view, ie"}}
-    </head>
-    <body>
-        <!--[if lte IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+	{{inject location="head" include="common, view, ie"}}
+</head>
+<body>
+	<!--[if lte IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-        {{#block "body"}}{{/block}}
+	{{#block "body"}}{{/block}}
 
-        {{inject location="body" include="common, view, ie"}}
-    </body>
+	{{inject location="body" include="common, view, ie"}}
+</body>
 </html>
