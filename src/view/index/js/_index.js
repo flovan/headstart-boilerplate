@@ -4,4 +4,4 @@
 
 // Your script here
 
-}(window, $));
+}(window));
