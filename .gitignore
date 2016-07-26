@@ -1,2 +1,9 @@
+# OS level files
+.DS_Store
+Thumbs.db
+
+# Cache files
 .sass-cache
+
+# Export folder
 export

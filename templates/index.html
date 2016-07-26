@@ -1,6 +1,12 @@
-{{> layout/header}}
+{{#extend "layout/main"}}
+{{#content "body"}}
 
-<!-- Your HTML here -->
-<p>Welcome to Headstart, off you go!</p>
+<main>
+	<!-- Your HTML here -->
 
-{{> layout/footer}}
+	<!-- General element overview -->
+	{{> partial/demo/kitchensink}}
+</main>
+
+{{/content}}
+{{/extend}}
